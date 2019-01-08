@@ -2,7 +2,7 @@
 let xhr = new XMLHttpRequest();
 
 // Details of the request
-xhr.open('GET', 'luke.json');
+xhr.open('GET', 'FanficServlet');
 
 // Handle the response
 // xhr.onreadystatechange = function() {
@@ -15,8 +15,7 @@ xhr.open('GET', 'luke.json');
 // };
 
 xhr.onload = () => {//console.log(JSON.parse(xhr.responseText).name)
-    let luke = JSON.parse(xhr.responseText);
-    console.log(luke.name);
+    console.log(xhr.responseText);
 };
 
 // xhr.onerror = function() {
@@ -24,7 +23,7 @@ xhr.onload = () => {//console.log(JSON.parse(xhr.responseText).name)
 // }
 
 // Make the call
-//xhr.send();
+xhr.send();
 
 // FETCH API
 //fetch('luke.json').then(resp => resp.json()).then(data => console.log(data));

@@ -12,9 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String title = request.getParameter("title");
+		String user = this.getInitParameter("user");
+		if (request.getParameter("name") != null)
+			user = request.getParameter("name");
+		//String user = this.getServletContext().getInitParameter("user");
 		PrintWriter output = response.getWriter();
-		output.write("GET " + title);
+		output.write("Hello " + user);
+		
 	}
 	
 	@Override
